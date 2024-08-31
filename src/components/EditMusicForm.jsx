@@ -107,6 +107,7 @@ function EditMusicForm() {
     e.preventDefault();
     const { image, ...updatedData } = formData;
     dispatch({ type: "updateMusic", payload: { id, data: updatedData } });
+    navigate(`/music/${id}`);
   }
 
   return (

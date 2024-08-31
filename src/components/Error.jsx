@@ -36,7 +36,9 @@ const Error = ({ error }) => {
     <ErrorContainer>
       <ErrorTitle>Something went wrong</ErrorTitle>
       <ErrorMessage>{errorMessage}</ErrorMessage>
-      <Button onClick={() => window.location.reload()}>Retry</Button>
+      <ErrorMessage>
+        check your internet connection and Reload the page
+      </ErrorMessage>
     </ErrorContainer>
   );
 };

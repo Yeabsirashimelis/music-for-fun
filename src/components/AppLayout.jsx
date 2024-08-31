@@ -7,7 +7,7 @@ const LayoutContainer = styled.div`
   display: grid;
   height: 100dvh;
   grid-template-rows: auto 1fr;
-
+  overflow-y: hidden;
   @media (min-width: 768px) {
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr;
@@ -15,13 +15,13 @@ const LayoutContainer = styled.div`
 `;
 
 const MainContent = styled.div`
-  overflow-y: auto;
   padding: 0.5rem;
   background-color: black;
   border-radius: 2px;
-
+  overflow-y: scroll;
   @media (min-width: 768px) {
     margin-top: 40px;
+    margin-bottom: 0;
   }
 `;
 

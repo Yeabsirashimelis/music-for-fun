@@ -12,9 +12,8 @@ import Error from "./Error";
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr; /* Default to 1 column */
-
   gap: 20px;
-  padding: 20px;
+  padding: 10px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */

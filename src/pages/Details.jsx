@@ -16,6 +16,7 @@ const PageContainer = styled.div`
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   border: 2px solid ${({ color2 }) => color2};
+  font-family: cursive;
 `;
 
 const Header = styled.div`
@@ -105,7 +106,7 @@ function Details() {
   }, [dispatch]);
 
   if (loading) return <Spinner loading={loading} />;
-  if (error) return <Error error={error} />;
+  if (error) return <Error error={error.message} />;
   return (
     <PageContainer color1={music.color1} color2={music.color2}>
       <Header>
@@ -136,7 +137,7 @@ function Details() {
       </DetailsList>
 
       <Description headerColor={music.headerColor}>
-        {music.description}
+        your description: {music.description}
       </Description>
     </PageContainer>
   );
