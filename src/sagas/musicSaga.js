@@ -14,6 +14,7 @@ import {
   addOrUpdateMusicsStart,
   addOrUpdateMusicsSuccess,
   addOrUpdateMusicsFailure,
+  updateMusicSuccess,
 } from "../slices/musicSlice";
 import toast from "react-hot-toast";
 
@@ -101,7 +102,7 @@ function* updateMusic(action) {
 
     // Dispatch success actions
     yield put(resetForm());
-    yield put(addOrUpdateMusicsSuccess({ id: action.payload.id }));
+    yield put(updateMusicSuccess({ id: action.payload.id }));
     toast.success("Music infos updated successfully!");
     return "OK";
   } catch (error) {

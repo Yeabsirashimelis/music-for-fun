@@ -19,6 +19,8 @@ const musicSlice = createSlice({
     },
     addOrUpdateMusicsSuccess: (state, action) => {
       state.loading = false;
+    },
+    updateMusicSuccess: (state, action) => {
       state.redirectPath = `/music/${action.payload.id}`;
     },
     resetRedirectPath: (state) => {
@@ -73,6 +75,7 @@ const musicSlice = createSlice({
 export const {
   addOrUpdateMusicsStart,
   addOrUpdateMusicsSuccess,
+  updateMusicSuccess,
   resetRedirectPath,
   addOrUpdateMusicsFailure,
   fetchMusicsStart,
