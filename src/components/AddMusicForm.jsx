@@ -86,6 +86,7 @@ function AddMusicForm() {
   const formData = useSelector((state) => state.addMusic);
 
   const loading = useSelector((state) => state.music.loading);
+  const error = useSelector((state) => state.music.error);
 
   // For the image preview
   const [preview, setPreview] = useState("");
@@ -115,7 +116,6 @@ function AddMusicForm() {
     e.preventDefault();
 
     dispatch({ type: "submitForm", payload: formData });
-    const error = useSelector((state) => state.music.error);
     console.log(error);
 
     if (!error) setPreview(""); // Reset the image preview

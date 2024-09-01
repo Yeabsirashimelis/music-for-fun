@@ -63,6 +63,8 @@ function EditMusicForm() {
   const prevData = useSelector((state) => state.music.music);
   const formData = useSelector((state) => state.addMusic);
   const loading = useSelector((state) => state.music.loading);
+  const redirectPath = useSelector((state) => state.music.redirectPath);
+  console.log(redirectPath);
 
   useEffect(() => {
     dispatch({ type: "fetchSelectedMusicData", payload: id });
@@ -103,11 +105,16 @@ function EditMusicForm() {
     dispatch(updateField({ field: name, value }));
   }
 
+  useEffect(() => {
+    if (redirectPath) {
+      navigate(redirectPath);
+    }
+  }, [redirectPath]);
+
   function handleSubmit(e) {
     e.preventDefault();
     const { image, ...updatedData } = formData;
     dispatch({ type: "updateMusic", payload: { id, data: updatedData } });
-    navigate(`/music/${id}`);
   }
 
   return (

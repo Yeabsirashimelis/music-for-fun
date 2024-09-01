@@ -101,9 +101,7 @@ function* updateMusic(action) {
 
     // Dispatch success actions
     yield put(resetForm());
-    yield put(addOrUpdateMusicsSuccess());
-
-    // Display success toast
+    yield put(addOrUpdateMusicsSuccess({ id: action.payload.id }));
     toast.success("Music infos updated successfully!");
     return "OK";
   } catch (error) {

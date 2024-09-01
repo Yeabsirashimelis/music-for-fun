@@ -6,6 +6,7 @@ const initialState = {
   loading: false,
   error: null,
   deleting: false,
+  redirectPath: null,
 };
 
 const musicSlice = createSlice({
@@ -18,7 +19,7 @@ const musicSlice = createSlice({
     },
     addOrUpdateMusicsSuccess: (state, action) => {
       state.loading = false;
-      // state.redirectPath = `/music/${action.payload.id}`;
+      state.redirectPath = `/music/${action.payload.id}`;
     },
     resetRedirectPath: (state) => {
       state.redirectPath = null; // Reset redirect path
