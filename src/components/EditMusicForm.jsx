@@ -8,6 +8,8 @@ import Header from "../custom-components/Header";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { resetForm, updateField } from "../slices/formSlice";
+import { resetRedirectPath } from "../slices/musicSlice";
+
 import Spinner from "../components/Spinner";
 
 const FormContainer = styled.div`
@@ -108,6 +110,7 @@ function EditMusicForm() {
   useEffect(() => {
     if (redirectPath) {
       navigate(redirectPath);
+      dispatch(resetRedirectPath());
     }
   }, [redirectPath]);
 
